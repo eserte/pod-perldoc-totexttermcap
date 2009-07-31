@@ -55,6 +55,13 @@ Pod::Perldoc::ToTextTermcap - let Perldoc render Pod as plaintext with format es
 
   perldoc -MPod::Perldoc::ToTextTermcap Some::Modulename
 
+or
+
+  PERLDOC=-MPod::Perldoc::ToTextTermcap
+  export PERLDOC
+  # or: setenv PERLDOC -MPod::Perldoc::ToTextTermcap
+  perldoc Some::Module
+
 =head1 DESCRIPTION
 
 This is a "plug-in" class that allows Perldoc to use

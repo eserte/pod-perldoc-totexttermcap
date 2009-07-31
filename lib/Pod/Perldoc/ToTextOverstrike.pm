@@ -55,6 +55,13 @@ Pod::Perldoc::ToTextOverstrike - let Perldoc render Pod as formatted overstrike 
 
   perldoc -MPod::Perldoc::ToTextOverstrike Some::Modulename
 
+or
+
+  PERLDOC=-MPod::Perldoc::ToTextOverstrike
+  export PERLDOC
+  # or: setenv PERLDOC -MPod::Perldoc::ToTextOverstrike
+  perldoc Some::Module
+
 =head1 DESCRIPTION
 
 This is a "plug-in" class that allows Perldoc to use
