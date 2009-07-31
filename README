@@ -8,5 +8,9 @@ Pod::Perldoc::ToText and/or Pod::Text, and eventually to replace
 Pod::Man as default perldoc renderer by any of the two (I believe it
 is not possible to have decent Unicode support with nroff).
 
+Actually it looks like some terminal emulations does not cope very
+well with Pod::Text::Termcap. But Pod::Text::Overstrike looks good so
+far. I tried FreeBSD console, xterm, urxvt.
+
 The repository can be found at:
 git@github.com:eserte/pod-perldoc-totexttermcap.git
