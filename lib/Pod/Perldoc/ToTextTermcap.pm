@@ -17,7 +17,7 @@ use strict;
 use warnings;
 
 use vars qw($VERSION);
-$VERSION = "0.00_50";
+$VERSION = "0.01";
 
 use base qw(Pod::Perldoc::ToText);
 
