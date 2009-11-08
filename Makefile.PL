@@ -14,6 +14,8 @@ WriteMakefile(
 	'Pod::Text::Termcap'    => 0,
 	'Pod::Text::Overstrike' => 0,
     },
+    ($ExtUtils::MakeMaker::VERSION >= 6.54 ?
+	(META_ADD => { resources => { repository => 'git://github.com/eserte/pod-perldoc-totexttermcap.git' } }) : ()),
 );
 
 sub MY::postamble {
