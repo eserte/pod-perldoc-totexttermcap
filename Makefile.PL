@@ -2,6 +2,17 @@ use strict;
 use ExtUtils::MakeMaker;
 
 my $is_devel_host = defined $ENV{USER} && $ENV{USER} eq 'eserte' && $^O =~ /bsd/i && -f "../../perl.release.mk";
+my $eumm_recent_enough = $ExtUtils::MakeMaker::VERSION >= 6.54;
+
+if (!$eumm_recent_enough) {
+    *MY::dist_core = sub {
+	<<'EOF';
+dist :
+	$(NOECHO) $(ECHO) "Sorry, use a newer EUMM!"
+
+EOF
+    };
+}
 
 WriteMakefile(
     NAME                => 'Pod::Perldoc::ToTextTermcap',
@@ -14,7 +25,7 @@ WriteMakefile(
 	'Pod::Text::Termcap'    => 0,
 	'Pod::Text::Overstrike' => 0,
     },
-    ($ExtUtils::MakeMaker::VERSION >= 6.54 ?
+    ($eumm_recent_enough ?
 	(META_ADD => { resources => { repository => 'git://github.com/eserte/pod-perldoc-totexttermcap.git' } }) : ()),
 );
 
